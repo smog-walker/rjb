@@ -31,7 +31,7 @@ jobs:
         working-directory: frontend
         env:
           PUBLIC_URL: /${{ github.event.repository.name }}
-          API_BASE_URL: ${{ vars.API_BASE_URL }}
+          API_BASE_URL: ${{ vars.API_BASE_URL || 'https://smogwalker.duckdns.org/api/v1' }}
         run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
